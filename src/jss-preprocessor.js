@@ -34,6 +34,6 @@ const convert = (eventType, filename) => {
 convert(null, null);
 
 if (program.watch) {
-  fs.watch(program.input, convert);
+  fs.watchFile(program.input, convert);
   console.log('Watching', program.input, 'for changes');
 }
