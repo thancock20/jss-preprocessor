@@ -1,0 +1,13 @@
+{
+  "name": "jss-preprocessor",
+  "version": "1.0.0",
+  "description": "Use JSS as a preprocessor to create CSS files.",
+  "bin": {
+    "jss-preprocessor": "bin/jss-preprocessor.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Todd Hancock <thancock20@hotmail.com> (http://www.toddhancock.net/)",
+  "license": "MIT"
+}
