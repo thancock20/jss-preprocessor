@@ -11,6 +11,7 @@
   "author": "Todd Hancock <thancock20@hotmail.com> (http://www.toddhancock.net/)",
   "license": "MIT",
   "dependencies": {
+    "commander": "^2.9.0",
     "jss": "^5.4.0",
     "jss-preset-default": "^0.2.0"
   }
