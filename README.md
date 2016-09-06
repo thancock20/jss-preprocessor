@@ -2,15 +2,29 @@
 
 Use [JSS](https://github.com/cssinjs/jss) as a preprocessor to create CSS files.
 
+ JSS Preprocessor includes JSS plugins to add the following features:
+ * [Extend rules and rule definitions](https://github.com/cssinjs/jss-extend)
+ * [Nested selectors and pseudo selectors](https://github.com/cssinjs/jss-nested)
+ * [Camel cased rule properties](https://github.com/cssinjs/jss-camel-case)
+ * [Add default units to numeric values](https://github.com/cssinjs/jss-default-unit)
+ * [Style properties extend each other instead of override](https://github.com/cssinjs/jss-props-sort)
+
+
+ Also, JSS Preprocessor uses autoprefixer to automatically add vendor prefixes.
+
 ## Installation
 
 Install globally with npm:
 
 ```
-npm install -g jss-preprocessor
+npm install -global jss-prepocessor
 ```
 
 Or install as a dev dependency and use in npm scripts.
+
+```
+npm install --save-dev jss-preprocessor
+```
 
 ## Usage:
 
@@ -21,25 +35,33 @@ const primaryColor = 'red';
 const secondaryColor = 'blue';
 
 module.exports = {
-  h1: {
+  header: {
     fontSize: '64px',
-    color: primaryColor
+    color: primaryColor,
+    display: 'flex'
   },
   ul: {
     backgroundColor: secondaryColor
   }
 };
 ```
+Which results in the following CSS:
+```css
+header {
+  color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 64px;
+}
+ul {
+  background-color: blue;
+}
+```
 
- jss-preprocessor includes [jss-preset-default](https://github.com/cssinjs/jss-preset-default) to add the following features:
- * [Extend rules and rule definitions](https://github.com/cssinjs/jss-extend)
- * [Nested selectors and pseudo selectors](https://github.com/cssinjs/jss-nested)
- * [Camel cased rule properties](https://github.com/cssinjs/jss-camel-case)
- * [Add default units to numeric values](https://github.com/cssinjs/jss-default-unit)
- * ~~[Handle vendor prefixes](https://github.com/cssinjs/jss-vendor-prefixer)~~ Actually, no. Unfortunately, this plugin doesn't work that way.
- * [Style properties extend each other instead of override](https://github.com/cssinjs/jss-props-sort)
 
-Then use jss-preprocessor like this:
+
+Then use JSS Preprocessor like this:
 
 ```
 jss-preprocessor --input styles.js --output styles.css
