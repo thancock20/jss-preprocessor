@@ -1,6 +1,6 @@
 {
   "name": "jss-preprocessor",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Use JSS as a preprocessor to create CSS files.",
   "bin": {
     "jss-preprocessor": "lib/jss-preprocessor.js"
@@ -10,6 +10,16 @@
     "compile": "babel --presets es2015 -d lib/ src/",
     "prepublish": "npm run compile"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thancock20/jss-preprocessor.git"
+  },
+  "keywords": [
+    "jss",
+    "css",
+    "stylesheet",
+    "preprocessor"
+  ],
   "author": "Todd Hancock <thancock20@hotmail.com> (http://www.toddhancock.net/)",
   "license": "MIT",
   "dependencies": {
