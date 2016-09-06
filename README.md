@@ -45,7 +45,8 @@ module.exports = {
   }
 };
 ```
-Which results in the following CSS:
+
+Will result in the following CSS:
 ```css
 header {
   color: red;
@@ -58,7 +59,6 @@ ul {
   background-color: blue;
 }
 ```
-
 
 
 Then use JSS Preprocessor like this:
