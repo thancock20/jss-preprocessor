@@ -4,6 +4,9 @@ import fs from 'fs';
 import path from 'path';
 import program from 'commander';
 
+import autoprefixer from 'autoprefixer';
+import postcss from 'postcss';
+
 import jss from 'jss';
 import preset from 'jss-preset-default';
 jss.setup(preset());
@@ -27,8 +30,13 @@ const requireUncached = (module) => {
 const convert = (eventType, filename) => {
   const styles = requireUncached(program.input);
   const sheet = jss.createStyleSheet(styles, { named: false });
-  fs.writeFileSync(program.output, sheet.toString());
-  console.log('CSS output to ', program.output);
+  postcss([ autoprefixer ]).process(sheet.toString()).then(function (result) {
+    result.warnings().forEach(function (warn) {
+      console.warn(warn.toString());
+    });
+    fs.writeFileSync(program.output, result.css);
+    console.log('CSS output to ', program.output);
+  })
 };
 
 convert(null, null);
