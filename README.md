@@ -36,7 +36,7 @@ const secondaryColor = 'blue';
 
 module.exports = {
   header: {
-    fontSize: '64px',
+    fontSize: 64,
     color: primaryColor,
     display: 'flex'
   },
