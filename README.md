@@ -17,7 +17,7 @@ Use [JSS](https://github.com/cssinjs/jss) as a preprocessor to create CSS files.
 Install globally with npm:
 
 ```
-npm install -global jss-prepocessor
+npm install --global jss-prepocessor
 ```
 
 Or install as a dev dependency and use in npm scripts.
@@ -36,7 +36,7 @@ const secondaryColor = 'blue';
 
 module.exports = {
   header: {
-    fontSize: '64px',
+    fontSize: 64,
     color: primaryColor,
     display: 'flex'
   },
