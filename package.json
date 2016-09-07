@@ -1,6 +1,6 @@
 {
   "name": "jss-preprocessor",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Use JSS as a preprocessor to create CSS files.",
   "bin": {
     "jss-preprocessor": "lib/jss-preprocessor.js"
